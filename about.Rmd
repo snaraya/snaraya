@@ -1,9 +1,17 @@
 ---
-title: "About this blog"
-description: |
-  Some additional details about the blog
+title: "Soledad Araya"
+image: "snaraya.JPG"
+links:
+  - label: LinkedIn
+    url: "https://www.linkedin.com/in/soledad-araya-0a651792/"
+  - label: GitHub
+    url: "https://github.com/snaraya"
+  - label: Email
+    url: "mailto:snaraya@uc.cl"
+output:
+  postcards::jolla
 ---
+ 
+Se vienen `r emo::ji("twilight")`  cositas `r emo::ji("twilight")`
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+Para hacer los emojis usé `devtools::install_github("hadley/emo")`

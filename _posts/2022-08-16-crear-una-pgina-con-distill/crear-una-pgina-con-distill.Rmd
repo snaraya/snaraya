@@ -1,0 +1,117 @@
+---
+title: "Cómo hacer una página estática con distill"
+description: |
+  En este post veremos cómo crear(nos) una página
+  estática utilizando el paquete distill.
+author:
+  - name: Soledad Araya
+    url: https://snaraya.github.io
+date: 08-16-2022
+output:
+  distill::distill_article:
+    self_contained: false
+---
+
+## `distill`
+
+Lo primero que realizaremos esta vez es instalar el paquete que usaremos:
+
+```{r eval=F}
+install.packages("distill")
+```
+
+A diferencia de la mayoría de los paquetes, no lo cargaremos al ambiente de R, sólo usaremos algunas funciones.
+
+Con el paquete cargado, haremos un proyecto:
+
+![](images/image1.png)
+Iremos a "New Directory":
+
+![](images/image2.png)
+Y haremos clic en "Distill Blog". Nos pedirá poner un nombre a la carpeta, donde estará alojado y el título del blog. 
+
+![](images/image4.png)
+El blog se creará de manera automática. Esto es lo que verán al momento de crearlo:
+
+![](images/image5.png)
+¿Qué es cada documento?
+
+```{r message=F, warning=F}
+library(knitr)
+library(kableExtra)
+
+readxl::read_excel("input/tablas.xlsx", sheet = "tablas_distill") %>% 
+  knitr::kable() %>% 
+  kable_styling(bootstrap_options = c("striped")) %>% 
+  column_spec(1, width_min = "3cm", bold = T) %>% 
+  column_spec(2, width_min = "6cm") 
+```
+
+## Personalizar el blog:
+
+Hay muchas formas de personalizar el blog. Para empezar, podemos crear un tema:
+
+```{r eval=FALSE}
+distill::create_theme("theme")
+```
+
+Esto creará un archivo CSS en la carpeta. Pueden modificar a su gusto cómo lucirá su página. Cuando esté listo, sólo deben agregar `theme: theme.css` a su archivo _site.ylm:
+
+```{r eval=F}
+name: "snaraya"
+title: "Blank Space"
+theme: theme.css
+navbar:
+```
+
+Si buscan personalizar su página, les dejo algunos links de interés:
+
+* [Crear un tema en distill](https://rstudio.github.io/distill/website.html#create-theme).
+* [R Markdown Cookbook](https://bookdown.org/yihui/rmarkdown-cookbook/).
+* [Paquete pasa usar emojis en R Markdown](https://github.com/hadley/emo).
+* Si buscan personalizar la paleta de colores de su página y de los gráficos, les recomiendo [esta página](https://coolors.co/palettes/trending.).
+
+## Publicar nuestro blog:
+
+Usaremos GitHub Pages para lanzar nuestro blog. Hay distintas maneras de poner un blog hecho con R Markdown online, pero nosotros/as usaremos esta versión para ocupar la cuenta que hicimos la semana pasada.
+
+Hay diferentes formas de llegar al mismo destino, probablemente esa es una de las fortalezas de R, pero cuando recién se está aprendiendo esto puede resultar abrumador. En mi caso, yo ya tenía creado un repositorio con el nombre de mi usuario (https://github.com/snaraya/snaraya). Para usar GitHub Pages es necesario que el nombre de la página sea el mismo que el nombre de usuario, esto quiere decir que tendremos que crear una repo con el mismo nombre de usuario.
+
+Tenemos la repo en nuestra cuenta.
+
+1. Podemos abrir la repo con GitHub Desktop, esto nos creará automáticamente una carpeta local que tendrá un **README.md**. Podemos mover los archivos de nuestro proyecto directamente a esa carpeta.
+
+> Recuerden que el archivo **README.md** puede ser utilizado para crear una tarjeta de bienvenida a su página de GitHub. En ella pueden resumir algunos de sus trabajos como ayudantes, asistentes de investigación, prácticas o pasantías. También, pueden poner el nivel de sus habilidades con R u otros lenguajes de programación, el nivel de inglés o de otros idiomas, su manejo de programas como QGIS, SPSS y Stata.
+
+2. Iremos a **Build** que se encuentra en el panel superior derecho.
+
+![](images/image7.png)
+
+Este paso nos dará una mirada global de la página que estamos creando. Si hay algún problema, lo más probable es que se pueda identificar en este momento. De esa manera, se puede eliminar el error antes de lanzar la página a la web.
+
+Si queremos hacerlo desde la consola, podemos poner:
+
+```{r eval=FALSE}
+rmarkdown::render_site()
+```
+
+Cuando corran la página, ésta se abrirá en el **Viewer**
+
+![](images/image8.png)
+Decidí dejar una pestaña para hacer un CV. Ustedes pueden crear tantas secciones como lo crean necesario para el desarrollo de sus proyectos.
+
+![](images/image9.png)
+
+3. Archivo **jekill**
+
+GitHub Pages ocupa su propia interfaz al momento de lanzar una página web, por lo que debemos decirle a GitHub que no ocuparemos esa interfaz predeterminada, sino la que estamos desarrollando. Para eso, crearemos un archivo dentro de nuestra repo.
+
+```{r eval=F}
+file.create(".nojekyll")
+```
+
+Esto bastará para que nuestro sitio pueda lanzarse de manera exitosa.
+
+4. Lanzamiento
+
+Van a GitHub Desktop y hacen el primer commit desde la carpeta local. Esto subirá los archivos en los que han estado trabajando a GitHub, y dentro de unos minutos podrán ver su página lista.

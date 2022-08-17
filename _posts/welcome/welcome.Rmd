@@ -1,13 +1,11 @@
 ---
-title: "Welcome to Blank Space"
+title: "Bienvenido"
 description: |
-  Welcome to our new blog, Blank Space. We hope you enjoy 
-  reading what we have to say!
+  ¡Bienvenido a este blog!
+  Aquí se habla de ciencia política y de Taylor Swift.
 author:
-  - name: Nora Jones 
-    url: https://example.com/norajones
-    affiliation: Spacely Sprockets
-    affiliation_url: https://example.com/spacelysprokets
+  - name: Soledad Araya
+    url: https://snaraya.github.io
 date: 08-16-2022
 output:
   distill::distill_article:

@@ -17,5 +17,14 @@ reading what we have to say!</description>
       <guid>https://snaraya.github.io/posts/welcome</guid>
       <pubDate>Tue, 16 Aug 2022 00:00:00 +0000</pubDate>
     </item>
+    <item>
+      <title>Cómo hacer una página estática con distill</title>
+      <dc:creator>Soledad Araya</dc:creator>
+      <link>https://snaraya.github.io/posts/2022-08-16-crear-una-pgina-con-distill</link>
+      <description>En este post veremos cómo crear(nos) una página
+estática utilizando el paquete distill.</description>
+      <guid>https://snaraya.github.io/posts/2022-08-16-crear-una-pgina-con-distill</guid>
+      <pubDate>Tue, 16 Aug 2022 00:00:00 +0000</pubDate>
+    </item>
   </channel>
 </rss>
