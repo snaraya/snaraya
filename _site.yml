@@ -1,6 +1,6 @@
 name: "snaraya"
 title: "Blank Space"
-base_url: https://snaraya.github.com
+base_url: https://snaraya.github.io
 description: |
   Blank Space
 output_dir: "docs"
