@@ -1,5 +1,0 @@
----
-title: "Blank Space"
-site: distill::distill_website
-listing: posts
----

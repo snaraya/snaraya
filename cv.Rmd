@@ -1,6 +1,0 @@
----
-title: "CV"
-description: |
-  Información sobre trabajo
----
-
