@@ -1,0 +1,28 @@
+{
+  "articles": [
+    {
+      "path": "about.html",
+      "title": "About this blog",
+      "description": "Some additional details about the blog",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-08-16T23:01:30-04:00"
+    },
+    {
+      "path": "cv.html",
+      "title": "CV",
+      "description": "Información sobre trabajo",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-08-16T23:01:31-04:00"
+    },
+    {
+      "path": "index.html",
+      "title": "Blank Space",
+      "author": [],
+      "contents": "\n\n\n\n",
+      "last_modified": "2022-08-16T23:01:33-04:00"
+    }
+  ],
+  "collections": ["posts/posts.json"]
+}
